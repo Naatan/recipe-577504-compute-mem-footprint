@@ -1,6 +1,6 @@
 steps:
-- name: gcr.io/cloud-builders/curl
-  args: ['bash', '-c', '"sh <(curl -q https://platform.activestate.com/dl/cli/install.sh) -n -t ."']
+- name: docker.io/activestate/state_gcb
+  args: ['state', '--help']
 artifacts:
   objects:
     location: 'gs://activestate_test_artifacts/'
