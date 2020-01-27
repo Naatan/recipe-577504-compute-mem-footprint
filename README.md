@@ -10,7 +10,7 @@ By itself, the builtin function sys.getsizeof() is not helpful determining the s
 
 This recipe makes it easy to find the memory footprint of a container and its context. Builtin containers and their subclasses are all fully supported. Extensions are provided for user-defined containers.
 
-## Usage
+## Usage 
 
 If you already have the [State Tool] installed you can simply run
 
