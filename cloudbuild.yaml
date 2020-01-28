@@ -1,5 +1,7 @@
 steps:
 - name: docker.io/activestate/state_gcb
+  env:
+  - 'VERBOSE=true'
   args: ['state', 'run', 'recipe']
 - name: docker.io/activestate/state_gcb
   args: ['cat', 'out']
