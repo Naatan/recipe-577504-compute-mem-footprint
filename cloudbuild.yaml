@@ -1,10 +1,8 @@
 steps:
 - name: docker.io/activestate/state_gcb
-  args: ['state', '--help']
+  args: ['state', 'run', 'recipe']
 - name: docker.io/activestate/state_gcb
-  args: ['pwd']
-- name: docker.io/activestate/state_gcb
-  args: ['ls']
+  args: ['cat', 'out']
 artifacts:
   objects:
     location: 'gs://activestate_test_artifacts/'
