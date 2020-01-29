@@ -1,7 +1,6 @@
 steps:
 - name: docker.io/activestate/state_gcb:latest
   env:
-  - 'VERBOSE=true'
   - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
   args: ['state', 'run', 'recipe']
 - name: docker.io/activestate/state_gcb:latest
