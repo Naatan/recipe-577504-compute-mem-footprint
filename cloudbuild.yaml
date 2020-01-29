@@ -1,9 +1,9 @@
 steps:
-- name: docker.io/activestate/state_gcb
+- name: docker.io/activestate/state_gcb:latest
   env:
   - 'VERBOSE=true'
   args: ['state', 'run', 'recipe']
-- name: docker.io/activestate/state_gcb
+- name: docker.io/activestate/state_gcb:latest
   args: ['cat', 'out']
 artifacts:
   objects:
