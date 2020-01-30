@@ -11,7 +11,8 @@ scripts:
       ${constants.ENV}
       curl -sSL https://sdk.cloud.google.com | bash
       state auth --token `gcloud beta secrets ACTIVESTATE_API_KEY`
-      echo `gcloud beta secrets ACTIVESTATE_PRIVATE_KEY` > $ACTIVESTATE_CLI_CONFIGDIR/activestate/cli-unstable/private.key
+      find $ACTIVESTATE_CLI_CONFIGDIR
+      echo `gcloud beta secrets ACTIVESTATE_PRIVATE_KEY --quiet` > $ACTIVESTATE_CLI_CONFIGDIR/activestate/cli-unstable/private.key
   - name: recipe
     description: Runs the recipe
     value: |
