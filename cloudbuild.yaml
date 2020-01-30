@@ -4,9 +4,7 @@ steps:
   - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
   args: ['state', 'run', 'recipe']
 - name: docker.io/activestate/state_gcb
-  args: ['ls', '-ahl']
-- name: docker.io/activestate/state_gcb
-  args: ['cat', 'out']
+  args: ['cat', 'output']
 artifacts:
   objects:
     location: 'gs://activestate_test_artifacts/'

@@ -6,7 +6,6 @@ scripts:
     description: Runs the recipe
     value: |
       python3 recipe.py | tee output
-      ls -ahl
   - name: getting-started
     description: Information to help you get started with your recipe and the State Tool
     language: python3
