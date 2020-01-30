@@ -1,6 +1,6 @@
 steps:
 - name: docker.io/activestate/state_gcb
-  args: ['state', 'run', 'authenticate-gcloud']
+  args: ['state', 'run', 'prepare']
 - name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'recipe']
 - name: docker.io/activestate/state_gcb
