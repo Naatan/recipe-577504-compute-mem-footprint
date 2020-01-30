@@ -5,13 +5,14 @@ constants:
   - name: ENV
     value: |
       export PATH=$PATH:/builder/home/google-cloud-sdk/bin
+      export CLOUDSDK_CORE_DISABLE_PROMPTS=1
 scripts:
   - name: prepare
     value: |
       ${constants.ENV}
       curl -sSL https://sdk.cloud.google.com | bash
-      state auth --token `gcloud --quiet beta secrets ACTIVESTATE_API_KEY`
-      echo `gcloud --quiet beta secrets ACTIVESTATE_PRIVATE_KEY` > $ACTIVESTATE_CLI_CONFIGDIR/private.key
+      state auth --token `gcloud beta secrets ACTIVESTATE_API_KEY`
+      echo `gcloud beta secrets ACTIVESTATE_PRIVATE_KEY` > $ACTIVESTATE_CLI_CONFIGDIR/private.key
       find $ACTIVESTATE_CLI_CONFIGDIR
   - name: recipe
     description: Runs the recipe
