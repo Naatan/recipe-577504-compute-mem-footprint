@@ -3,8 +3,8 @@ steps:
   env:
   - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
   args: ['state', 'run', 'recipe']
-- name: docker.io/activestate/state_gcb
-  args: ['printenv']
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  args: ['gcloud', 'beta', 'secrets', 'list']
 - name: docker.io/activestate/state_gcb
   args: ['state', 'auth']
 artifacts:
