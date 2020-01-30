@@ -1,13 +1,16 @@
 steps:
 - name: docker.io/activestate/state_gcb
-  env:
-  - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
+  args: ['state', 'run', 'authenticate-gcloud']
+- name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'recipe']
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk
-  args: ['gcloud', 'beta', 'secrets', 'list']
 - name: docker.io/activestate/state_gcb
   args: ['state', 'auth']
 artifacts:
   objects:
     location: 'gs://activestate_test_artifacts/'
     paths: ['output']
+options:
+  env:
+  - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
+  - 'ACTIVESTATE_CLI_CONFIGDIR=/workdir/.cfg'
+  - 'ACTIVESTATE_CLI_CACHEDIR=/workdir/.cache'

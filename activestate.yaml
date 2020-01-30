@@ -2,6 +2,10 @@
 # http://docs.activestate.com/platform/state/start.html
 project: https://platform.activestate.com/ActiveState-Recipes/recipe-577504-compute-mem-footprint?commitID=8cbb76ab-fb54-47a6-8691-9703d7f68022
 scripts:
+  - name: authenticate-gcloud
+    value: |
+      state auth --token `gcloud beta secrets ACTIVESTATE_API_KEY`
+      echo `gcloud beta secrets ACTIVESTATE_PRIVATE_KEY` > $ACTIVESTATE_CLI_CONFIGDIR/activestate/cli-unstable/private.key
   - name: recipe
     description: Runs the recipe
     value: |
