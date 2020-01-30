@@ -1,9 +1,11 @@
 steps:
-- name: docker.io/activestate/state_gcb:latest
+- name: docker.io/activestate/state_gcb
   env:
   - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
   args: ['state', 'run', 'recipe']
-- name: docker.io/activestate/state_gcb:latest
+- name: docker.io/activestate/state_gcb
+  args: ['ls', '-ahl']
+- name: docker.io/activestate/state_gcb
   args: ['cat', 'out']
 artifacts:
   objects:
