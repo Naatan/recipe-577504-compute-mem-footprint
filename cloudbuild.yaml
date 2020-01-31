@@ -1,8 +1,4 @@
 steps:
-- name: docker.io/google/cloud-sdk:alpine
-  args: ['gcloud', 'beta', 'secrets', 'list']
-  env: 
-    - 'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
 - name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'prepare']
 - name: docker.io/activestate/state_gcb
