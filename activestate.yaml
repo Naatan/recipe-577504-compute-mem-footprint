@@ -13,24 +13,13 @@ scripts:
       curl -sSL https://sdk.cloud.google.com | bash
       state auth --token `gcloud beta secrets versions access 1 --secret=ACTIVESTATE_API_KEY`
       echo "`gcloud beta secrets versions access 2 --secret=ACTIVESTATE_PRIVATE_KEY`" > $ACTIVESTATE_CLI_CONFIGDIR/private.key
-
       cat $ACTIVESTATE_CLI_CONFIGDIR/config.yaml
-      touch /workspace/hello.txt
-      touch $ACTIVESTATE_CLI_CONFIGDIR/hello.txt
   - name: recipe
     description: Runs the recipe
     value: |
       ${constants.ENV}
       python3 recipe.py | tee output
-
-      echo "---- 1"
-      printenv
-      echo "---- 2"
-      find /workspace
-      echo "---- 3"
       cat $ACTIVESTATE_CLI_CONFIGDIR/config.yaml
-      echo "---- 4"
-      VERBOSE=true state auth
   - name: getting-started
     description: Information to help you get started with your recipe and the State Tool
     language: python3
