@@ -12,10 +12,13 @@ scripts:
       ${constants.ENV}
       curl -sSL https://sdk.cloud.google.com | bash
       state auth --token `gcloud beta secrets versions access 1 --secret=ACTIVESTATE_API_KEY`
-      echo `gcloud beta secrets versions access 2 --secret=ACTIVESTATE_PRIVATE_KEY` > $ACTIVESTATE_CLI_CONFIGDIR/private.key
+      echo "`gcloud beta secrets versions access 2 --secret=ACTIVESTATE_PRIVATE_KEY`" > $ACTIVESTATE_CLI_CONFIGDIR/private.key
       printenv
       find $ACTIVESTATE_CLI_CONFIGDIR
       find $ACTIVESTATE_CLI_CACHEDIR
+      echo '------------- 1'
+      gcloud beta secrets versions access 2 --secret=ACTIVESTATE_PRIVATE_KEY
+      echo '------------- 2'
       cat $ACTIVESTATE_CLI_CONFIGDIR/private.key
   - name: recipe
     description: Runs the recipe
