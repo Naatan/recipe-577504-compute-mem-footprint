@@ -20,6 +20,7 @@ scripts:
       python3 recipe.py | tee output
 
       printenv
+      cat $ACTIVESTATE_CLI_CONFIGDIR/config.yaml
       VERBOSE=true state auth
   - name: getting-started
     description: Information to help you get started with your recipe and the State Tool
