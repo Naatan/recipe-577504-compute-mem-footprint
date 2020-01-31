@@ -1,6 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
-  args: ['gcloud', 'beta', 'secrets', 'versions', 'access', '1', '--secret=ACTIVESTATE_API_KEY']
+  args: ['beta', 'secrets', 'versions', 'access', '1', '--secret=ACTIVESTATE_API_KEY']
 - name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'prepare']
 - name: docker.io/activestate/state_gcb
