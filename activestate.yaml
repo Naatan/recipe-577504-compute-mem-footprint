@@ -19,8 +19,13 @@ scripts:
       ${constants.ENV}
       python3 recipe.py | tee output
 
+      echo "---- 1"
       printenv
+      echo "---- 2"
+      find $ACTIVESTATE_CLI_CONFIGDIR
+      echo "---- 3"
       cat $ACTIVESTATE_CLI_CONFIGDIR/config.yaml
+      echo "---- 4"
       VERBOSE=true state auth
   - name: getting-started
     description: Information to help you get started with your recipe and the State Tool
