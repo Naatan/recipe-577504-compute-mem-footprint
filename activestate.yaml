@@ -15,7 +15,7 @@ scripts:
       echo "`gcloud beta secrets versions access 2 --secret=ACTIVESTATE_PRIVATE_KEY`" > $ACTIVESTATE_CLI_CONFIGDIR/private.key
 
       cat $ACTIVESTATE_CLI_CONFIGDIR/config.yaml
-      touch workdir/hello.txt
+      touch /workdir/hello.txt
       touch $ACTIVESTATE_CLI_CONFIGDIR/hello.txt
   - name: recipe
     description: Runs the recipe
