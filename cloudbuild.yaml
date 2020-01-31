@@ -12,5 +12,5 @@ artifacts:
 options:
   env:
   - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
-  - 'ACTIVESTATE_CLI_CONFIGDIR=/workdir/.cfg'
-  - 'ACTIVESTATE_CLI_CACHEDIR=/workdir/.cache'
+  - 'ACTIVESTATE_CLI_CONFIGDIR=/workdir/gcloud/cfg'
+  - 'ACTIVESTATE_CLI_CACHEDIR=/workdir/gcloud/cache'
