@@ -1,6 +1,6 @@
 steps:
 - name: docker.io/activestate/state_gcb
-  args: ['bash', '-c', '/usr/local/bin/state run prepare']
+  args: ['bash', '-c', '/usr/local/bin/state run prepare && cat /workspace/.cfg/config.yaml']
 - name: docker.io/activestate/state_gcb
   args: ['cat', '/workspace/.cfg/config.yaml']
 - name: docker.io/activestate/state_gcb
