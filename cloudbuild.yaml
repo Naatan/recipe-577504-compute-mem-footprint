@@ -1,12 +1,8 @@
 steps:
 - name: docker.io/activestate/state_gcb
-  args: ['bash', '-c', 'VERBOSE=true state run prepare && cat /workspace/.cfg/config.yaml']
-- name: docker.io/activestate/state_gcb
-  args: ['cat', '/workspace/.cfg/config.yaml']
+  args: ['state', 'run', 'prepare']
 - name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'recipe']
-  env:
-    - 'VERBOSE=true'
 - name: docker.io/activestate/state_gcb
   args: ['state', 'auth']
 artifacts:
