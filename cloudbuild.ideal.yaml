@@ -1,0 +1,9 @@
+steps:
+- name: docker.io/activestate/state_gcb
+  args: ['state', 'deploy', 'my/project', '~/.bashrc']
+- name: docker.io/activestate/state_gcb
+  args: ['python', 'recipe.py']
+artifacts:
+  objects:
+    location: 'gs://activestate_test_artifacts/'
+    paths: ['output']

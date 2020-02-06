@@ -4,8 +4,6 @@ steps:
 - name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'recipe']
 - name: docker.io/activestate/state_gcb
-  args: ['state', '--version']
-- name: docker.io/activestate/state_gcb
   args: ['state', 'auth']
 artifacts:
   objects:
