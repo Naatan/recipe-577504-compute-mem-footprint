@@ -6,6 +6,7 @@ constants:
     value: |
       export PATH=$PATH:/builder/home/google-cloud-sdk/bin
       export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+      printenv
 scripts:
   - name: prepare
     value: |
