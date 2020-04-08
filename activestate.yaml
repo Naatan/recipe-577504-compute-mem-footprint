@@ -6,7 +6,11 @@ constants:
     value: |
       export PATH=$PATH:/builder/home/google-cloud-sdk/bin
       export CLOUDSDK_CORE_DISABLE_PROMPTS=1
-      printenv
+
+      while IFS='=' read -r -d '' n v; do
+        x=`echo $n | sed -r 's/(.{5})/\1 /g'`
+        printf "'%s'='%s'\n" "$n" "$v"
+      done < < (env -0)
 scripts:
   - name: prepare
     value: |
