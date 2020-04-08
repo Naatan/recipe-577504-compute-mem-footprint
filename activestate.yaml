@@ -8,6 +8,7 @@ constants:
       export CLOUDSDK_CORE_DISABLE_PROMPTS=1
 scripts:
   - name: envinfo
+    language: python3
     value: |
       import os
       for k, v in os.environ.items():
