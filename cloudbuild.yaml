@@ -1,5 +1,7 @@
 steps:
 - name: docker.io/activestate/state_gcb
+  args: ['state', 'run', 'envinfo']
+- name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'prepare']
 - name: docker.io/activestate/state_gcb
   args: ['state', 'run', 'recipe']
