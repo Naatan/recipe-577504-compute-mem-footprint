@@ -1,6 +1,6 @@
 steps:
 - name: docker.io/activestate/state_gcb
-  args: ['state', 'run', 'deploy', 'ActiveState-CLI/Python3', '--path', '/workspace/.state']
+  args: ['state', 'deploy', 'ActiveState/cli', '--path', '/workspace/.state']
 - name: docker.io/activestate/state_gcb
   args: ['python3', '--version']
 - name: docker.io/activestate/state_gcb
