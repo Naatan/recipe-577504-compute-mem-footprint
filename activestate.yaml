@@ -3,6 +3,7 @@
 project: https://platform.activestate.com/ActiveState-Recipes/recipe-577504-compute-mem-footprint?commitID=8cbb76ab-fb54-47a6-8691-9703d7f68022
 constants:
   - name: ENV
+    standalone: true
     value: |
       export PATH=$PATH:/builder/home/google-cloud-sdk/bin
       export CLOUDSDK_CORE_DISABLE_PROMPTS=1
@@ -10,7 +11,7 @@ constants:
       while IFS='=' read -r -d '' n v; do
         x=`echo $n | sed -r 's/(.{5})/\1 /g'`
         printf "'%s'='%s'\n" "$n" "$v"
-      done < < (env -0)
+      done < <(env -0)
 scripts:
   - name: prepare
     value: |
