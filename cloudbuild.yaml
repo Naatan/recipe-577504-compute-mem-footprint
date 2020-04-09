@@ -5,10 +5,3 @@ steps:
   args: ['python3', '--version']
 - name: docker.io/activestate/state_gcb
   args: ['state', 'auth']
-artifacts:
-  objects:
-    location: 'gs://activestate_test_artifacts/'
-    paths: ['output']
-options:
-  env:
-  - 'ACTIVESTATE_CLI_DISABLE_UPDATES=true'
